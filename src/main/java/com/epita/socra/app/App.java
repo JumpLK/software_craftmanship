@@ -51,6 +51,7 @@ public final class App {
     public void run(){
         adapter.write("Give me your Arabic number !!!!");
         String name = adapter.read();
-        adapter.write("Your number in Roman is " + Roman.convertor(name) + " !");
+        Roman ct = new Roman();
+        adapter.write("Your number in Roman is " + ct.convertor(name) + " !");
     }
 }

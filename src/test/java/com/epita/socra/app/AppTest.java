@@ -90,5 +90,17 @@ public class AppTest {
         verify(mock).write("Give me your Arabic number !!!!");
         verify(mock).write(argThat(message -> message.contains("M")));
     }
+    @Test
+    public void verify_MMCMXCIX() {
+        IOAdapter mock = mock(IOAdapter.class);
+        when(mock.read()).thenReturn("2999");
+        App app = new App(mock);
+        app.run();
+
+        verify(mock).write("Give me your Arabic number !!!!");
+        verify(mock).write(argThat(message -> message.contains("MMCMXCIX")));
+    }
+
+
 
 }

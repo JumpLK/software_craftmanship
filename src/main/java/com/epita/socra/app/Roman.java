@@ -1,6 +1,6 @@
 package com.epita.socra.app;
 
-public class Roman {
+public class Roman implements Roman_interface{
     static public String toRoman(int decimal){
         int[] civilise = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         StringBuilder[] vieux = {new StringBuilder("M"),
@@ -32,7 +32,7 @@ public class Roman {
         return res.toString();
     }
 
-    static public String convertor(String s){
+     public String convertor(String s){
         int i = Integer.parseInt(s);
         return toRoman(i);
     }
