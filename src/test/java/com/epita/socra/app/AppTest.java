@@ -20,6 +20,49 @@ public class AppTest {
      */
 
     @Test
+    public void verify_interface_MMCMXCIX() {
+        Roman ct = new Roman();
+        String ret = ct.convertor("2999");
+        assertEquals(ret, "MMCMXCIX");
+    }
+
+    @Test
+    public void verify_basic_interface_1() {
+        Roman ct = new Roman();
+        String ret = ct.convertor("I");
+        assertEquals(ret, "1");
+    }
+
+    @Test
+    public void verify_basic_interface_50() {
+        Roman ct = new Roman();
+        String ret = ct.convertor("L");
+        assertEquals(ret, "50");
+    }
+
+    @Test
+    public void verify_basic_interface_2999() {
+        Roman ct = new Roman();
+        String ret = ct.convertor("MMCMXCIX");
+        assertEquals(ret, "2999");
+    }
+
+
+    @Test
+    public void verify_basic_interface_I() {
+        Roman ct = new Roman();
+        String ret = ct.convertor("1");
+        assertEquals(ret, "I");
+    }
+
+    @Test
+    public void verify_basic_interface_D() {
+        Roman ct = new Roman();
+        String ret = ct.convertor("500");
+        assertEquals(ret, "D");
+    }
+
+    @Test
     public void verify_basic_X() {
         IOAdapter mock = mock(IOAdapter.class);
         when(mock.read()).thenReturn("10");
