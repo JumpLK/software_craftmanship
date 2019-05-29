@@ -49,9 +49,9 @@ public final class App {
     }
 
     public void run(){
-        adapter.write("Give me your Arabic number !!!!");
+        adapter.write("Give me your number !!!!");
         String name = adapter.read();
         Roman ct = new Roman();
-        adapter.write("Your number in Roman is " + ct.convertor(name) + " !");
+        adapter.write("Your converted number is " + ct.convertor(name) + " !");
     }
 }

@@ -26,7 +26,7 @@ public class AppTest {
         App app = new App(mock);
         app.run();
 
-        verify(mock).write("Give me your Arabic number !!!!");
+        verify(mock).write("Give me your number !!!!");
         verify(mock).write(argThat(message -> message.contains("X")));
     }
 
@@ -37,7 +37,7 @@ public class AppTest {
         App app = new App(mock);
         app.run();
 
-        verify(mock).write("Give me your Arabic number !!!!");
+        verify(mock).write("Give me your number !!!!");
         verify(mock).write(argThat(message -> message.contains("I")));
     }
     @Test
@@ -47,7 +47,7 @@ public class AppTest {
         App app = new App(mock);
         app.run();
 
-        verify(mock).write("Give me your Arabic number !!!!");
+        verify(mock).write("Give me your number !!!!");
         verify(mock).write(argThat(message -> message.contains("V")));
     }
     @Test
@@ -57,7 +57,7 @@ public class AppTest {
         App app = new App(mock);
         app.run();
 
-        verify(mock).write("Give me your Arabic number !!!!");
+        verify(mock).write("Give me your number !!!!");
         verify(mock).write(argThat(message -> message.contains("L")));
     }
     @Test
@@ -67,7 +67,7 @@ public class AppTest {
         App app = new App(mock);
         app.run();
 
-        verify(mock).write("Give me your Arabic number !!!!");
+        verify(mock).write("Give me your number !!!!");
         verify(mock).write(argThat(message -> message.contains("C")));
     }
     @Test
@@ -77,7 +77,7 @@ public class AppTest {
         App app = new App(mock);
         app.run();
 
-        verify(mock).write("Give me your Arabic number !!!!");
+        verify(mock).write("Give me your number !!!!");
         verify(mock).write(argThat(message -> message.contains("D")));
     }
     @Test
@@ -87,7 +87,7 @@ public class AppTest {
         App app = new App(mock);
         app.run();
 
-        verify(mock).write("Give me your Arabic number !!!!");
+        verify(mock).write("Give me your number !!!!");
         verify(mock).write(argThat(message -> message.contains("M")));
     }
     @Test
@@ -97,10 +97,20 @@ public class AppTest {
         App app = new App(mock);
         app.run();
 
-        verify(mock).write("Give me your Arabic number !!!!");
+        verify(mock).write("Give me your number !!!!");
         verify(mock).write(argThat(message -> message.contains("MMCMXCIX")));
     }
 
 
+    @Test
+    public void verify_basic_1() {
+        IOAdapter mock = mock(IOAdapter.class);
+        when(mock.read()).thenReturn("I");
+        App app = new App(mock);
+        app.run();
+
+        verify(mock).write("Give me your number !!!!");
+        verify(mock).write(argThat(message -> message.contains("1")));
+    }
 
 }

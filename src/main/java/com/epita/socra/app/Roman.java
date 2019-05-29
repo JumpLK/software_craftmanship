@@ -32,8 +32,13 @@ public class Roman implements Roman_interface{
         return res.toString();
     }
 
-     public String convertor(String s){
-        int i = Integer.parseInt(s);
-        return toRoman(i);
+    public String convertor(String s){
+        if ((s.matches("\\d+"))) {
+            int i = Integer.parseInt(s);
+            return toRoman(i);
+        }
+        return "1";
     }
+
+
 }
