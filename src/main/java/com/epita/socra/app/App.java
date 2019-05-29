@@ -1,6 +1,9 @@
 package com.epita.socra.app;
 
+
 import com.epita.socra.app.tools.*;
+
+import javax.swing.tree.RowMapper;
 
 /**
  * Hello world!
@@ -26,9 +29,28 @@ public final class App {
         application.run();
     }
 
+    public String convert(String name) {
+        if (name.equals("10"))
+            return "X";
+        if (name.equals("1"))
+            return "I";
+        if (name.equals("5"))
+            return "V";
+        if (name.equals("50"))
+            return "L";
+        if (name.equals("100"))
+            return "C";
+        if (name.equals("500"))
+            return "D";
+        if (name.equals("1000"))
+            return "M";
+        return name;
+
+    }
+
     public void run(){
-        adapter.write("Hello, what's your name ?");
+        adapter.write("Give me your Arabic number !!!!");
         String name = adapter.read();
-        adapter.write("Nice to meet you, " + name + " !");
+        adapter.write("Your number in Roman is " + Roman.convertor(name) + " !");
     }
 }
